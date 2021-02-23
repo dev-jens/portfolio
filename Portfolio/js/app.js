@@ -19,13 +19,13 @@ contactForm.addEventListener('submit', (e)=>{
     }
     console.log(formData);
 
-    let xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest(); 
     xhr.open('POST', '/');
     xhr.setRequestHeader('content-type', 'application/json');
     xhr.onload = function(){
         console.log(xhr.responseText);
         if(xhr.responseText == 'success'){
-            alert('Email verzonden ik antwoord ASAP')
+            alert('Email verzonden')
             name.value = '';
             email.value = '';
             subject.value = '';
