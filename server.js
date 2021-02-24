@@ -12,7 +12,7 @@ app.use(express.static('./'));
 app.use(express.json());
 
 app.get('/', (req, res) =>{
-    res.sendFile(__dirname + '/Portfolio/html/contact.html')
+    res.sendFile(__dirname + '/Portfolio/html/aboutMe.html')
 })
 
 
