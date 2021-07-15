@@ -1,4 +1,4 @@
-//const Mail = require("nodemailer/lib/mailer");
+const Mail = require("nodemailer/lib/mailer");
 
 const contactForm = document.querySelector('.contact-form');
 
@@ -23,9 +23,10 @@ contactForm.addEventListener('submit', (e)=>{
     xhr.open('POST', '/');
     xhr.setRequestHeader('content-type', 'application/json');
     xhr.onload = function(){
+        console.log("xhr response")
         console.log(xhr.responseText);
-        if(xhr.responseText == 'success'){
-            alert('Email verzonden')
+        if(xhr.responseText == 'Success'){  // xhr.readyState === xhr.DONE){ 
+            alert('Email verzonden') // if (xhr.readyState === xhr.DONE)
             name.value = '';
             email.value = '';
             subject.value = '';

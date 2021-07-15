@@ -1,3 +1,5 @@
+const Mail = require("nodemailer/lib/mailer");
+
 const express = require('express');
 const app = express();
 require('dotenv').config();
