@@ -5,12 +5,12 @@ const app = express();
 require('dotenv').config();
 
 
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 const PORT = process.env.PORT || 5000 || 80;
 
 // middelware
-app.use(express.static('./'));
+app.use(express.static("./"));
 app.use(express.json());
 
 app.get('/', (req, res) =>{
@@ -21,7 +21,7 @@ app.get('/', (req, res) =>{
 app.post('/', (req, res)=>{
     console.log(req.body)
 
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: process.env.MAIL_LOGIN,
@@ -29,7 +29,7 @@ app.post('/', (req, res)=>{
         }
     })
 
-    const mailOptions = {
+    let mailOptions = {
         from: req.body.email,
         to: 'baetenjens07@gmail.com',
         subject: `Message from ${req.body.email}: ${req.body.subject}`,
