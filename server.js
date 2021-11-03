@@ -1,5 +1,4 @@
 
-
 const express = require('express');
 const app = express();
 require('dotenv').config();
@@ -7,7 +6,7 @@ require('dotenv').config();
 
 const nodemailer = require("nodemailer");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // middelware
 app.use(express.static("./"));
@@ -23,7 +22,6 @@ app.post('/', (req, res)=>{
 
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        secure: true,
         auth: {
             user: process.env.MAIL_LOGIN,
             pass: process.env.PASSWORD_MAIL
