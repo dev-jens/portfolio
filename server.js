@@ -6,7 +6,11 @@ require('dotenv').config();
 
 const nodemailer = require("nodemailer");
 
+<<<<<<< HEAD
 const PORT = process.env.PORT || 8080;
+=======
+const PORT = process.env.PORT || 80 ;
+>>>>>>> 230e5685c39332fd05331d9f6f47f345955b1e5f
 
 // middelware
 app.use(express.static("./"));
