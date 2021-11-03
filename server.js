@@ -3,11 +3,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
-
-
-
 const PORT = process.env.PORT || 80;
-
 
 // middelware
 app.use(express.static("./"));
@@ -27,6 +23,7 @@ app.post('/', (req, res)=>{
         secure: false,
         requireTLS: true,
         auth: {
+            type: "login",
             user: process.env.MAIL_LOGIN,
             pass: process.env.PASSWORD_MAIL
         }
