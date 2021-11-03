@@ -1,4 +1,7 @@
 //const Mail = require("nodemailer/lib/mailer");
+// const SMTPConnection = require("nodemailer/lib/smtp-connection");
+// let connection = new SMTPConnection(options);
+
 
 const contactForm = document.querySelector('.contact-form');
 
